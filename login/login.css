@@ -1,3 +1,11 @@
+body {
+    background-color: #000;
+}
+
+input:focus {
+    outline: 2px solid transparent;
+}
+
 .root-container {
     display: grid;
     grid-template-areas:
@@ -277,8 +285,22 @@ header {
     }
 }
 
+section {
+    height: 100%;
+}
+
+section > div {
+    width: 500px;
+    background-color: rgb(24, 24, 27);
+}
+
 .bg-input {
     background-color: rgb(39, 39, 42);
+    color: #fff;
+}
+
+.bg-input:focus-within {
+    background-color: rgb(63, 63, 70);
 }
 
 @media screen and (width < 1200px) {
@@ -326,7 +348,7 @@ header {
       width: 100%;
       margin: 0px;
       top: 2.5rem;
-      background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5)10%, rgba(0, 0, 0, 0.9)30% , #000 90%);
+      background: linear-gradient(to top, #000, rgba(0, 0, 0, 0.9), transparent);
     }
   
     .sidebar-menu > li {
@@ -372,68 +394,18 @@ header {
         border-radius: 0;
     }
 
-    .list-switch {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: .25rem;
-    }
-
-    #list-switch:checked ~ .list-switch {
-        text-align: center;
-        width: fit-content;
-        position: absolute;
-        left: -.5rem;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        transition-duration: .3s;
-        transition-property: all;
-        transition-timing-function: cubic-bezier(.4,0,.2,1);
-    }
-
-    #list-switch:checked ~ .list-switch .hide {
-        display: none;
-    }
-
-    #list-switch:checked ~ .list-switch > svg {
-        transform: rotate(0deg);
-        transition-duration: .3s;
-        transition-property: all;
-        transition-timing-function: cubic-bezier(.4,0,.2,1);
-    }
-
-    #list-switch:checked ~ .date-list {
-        position: relative;
-        top: -2.5rem;
-        left: -7rem;
-        transition-duration: .3s;
-        transition-property: all;
-        transition-timing-function: cubic-bezier(.4,0,.2,1);
-    }
-
-    #list-switch:checked ~ .content-block {
-        margin-left: 0;
-    }
-
-    #list-switch:checked ~ .content-block nav {
-        margin-left: 2rem;
-    }
-
-    #list-switch:checked ~ .content-block #tab-ghost {
-        left: 2rem;
-    }
-}
-
-@media screen and (width < 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    section {
+        height: fit-content;
     }
 }
 
 @media screen and (width < 768px) {
-    .grid-container {
-        gap: 1rem;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    body {
+        background-color: #121212;
+    }
+    section > div {
+        width: 100%;
+        background-color: #121212;
     }
 }
 
