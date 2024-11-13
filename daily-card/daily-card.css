@@ -336,6 +336,12 @@ header {
     cursor: pointer;
 }
 
+@media screen and (min-width: 1440px) {
+    .grid-container {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+}
+
 @media screen and (width < 1200px) {
     .root-container {
         display: grid;
