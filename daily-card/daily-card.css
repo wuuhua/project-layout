@@ -377,7 +377,17 @@ header {
       display: unset;
       padding: 0;
     }
-  
+    
+    .sidebar-container::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -32px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, #000, rgba(0, 0, 0, 0.9), transparent);
+    }
     .sidebar-head {
       display: none;
     }
@@ -387,7 +397,6 @@ header {
       width: 100%;
       margin: 0px;
       top: 2.5rem;
-      background: linear-gradient(to top, #000, rgba(0, 0, 0, 0.9), transparent);
     }
   
     .sidebar-menu > li {
